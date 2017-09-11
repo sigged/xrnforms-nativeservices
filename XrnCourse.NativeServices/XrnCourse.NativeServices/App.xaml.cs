@@ -7,6 +7,7 @@ using System.Text;
 using Xamarin.Forms;
 using XrnCourse.NativeServices.ViewModels;
 using XrnCourse.NativeServices.Pages;
+using XrnCourse.NativeServices.Services;
 
 namespace XrnCourse.NativeServices
 {
@@ -15,7 +16,9 @@ namespace XrnCourse.NativeServices
         public App()
         {
             InitializeComponent();
-
+            
+            //register dependencies
+            FreshIOC.Container.Register<IDeviceInfoService>(DependencyService.Get<IDeviceInfoService>());
             var mainview = FreshPageModelResolver.ResolvePageModel<MainViewModel>();
             MainPage = new FreshNavigationContainer(mainview);
         }

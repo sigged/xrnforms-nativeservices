@@ -7,14 +7,18 @@ namespace XrnCourse.NativeServices.ViewModels
 {
     public class DeviceInfoViewModel : FreshBasePageModel
     {
+        private IDeviceInfoService service;
+
+        public DeviceInfoViewModel(IDeviceInfoService deviceInfoService)
+        {
+            service = deviceInfoService;
+        }
 
         public DeviceInfo DeviceInfo { get; set; }
 
         public override void Init(object initData)
         {
             base.Init(initData);
-
-            IDeviceInfoService service = DependencyService.Get<IDeviceInfoService>();
             DeviceInfo = service.GetDeviceInfo();
         }
 
