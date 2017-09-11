@@ -1,5 +1,7 @@
 ﻿using FreshMvvm;
+using Xamarin.Forms;
 using XrnCourse.NativeServices.Domain;
+using XrnCourse.NativeServices.Services;
 
 namespace XrnCourse.NativeServices.ViewModels
 {
@@ -12,7 +14,8 @@ namespace XrnCourse.NativeServices.ViewModels
         {
             base.Init(initData);
 
-            DeviceInfo = new DeviceInfo();
+            IDeviceInfoService service = DependencyService.Get<IDeviceInfoService>();
+            DeviceInfo = service.GetDeviceInfo();
         }
 
     }
