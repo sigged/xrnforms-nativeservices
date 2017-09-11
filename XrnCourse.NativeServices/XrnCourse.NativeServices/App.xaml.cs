@@ -1,9 +1,12 @@
-﻿using System;
+﻿using FreshMvvm;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 using Xamarin.Forms;
+using XrnCourse.NativeServices.ViewModels;
+using XrnCourse.NativeServices.Pages;
 
 namespace XrnCourse.NativeServices
 {
@@ -13,7 +16,8 @@ namespace XrnCourse.NativeServices
         {
             InitializeComponent();
 
-            MainPage = new XrnCourse.NativeServices.MainPage();
+            var mainview = FreshPageModelResolver.ResolvePageModel<MainViewModel>();
+            MainPage = new FreshNavigationContainer(mainview);
         }
 
         protected override void OnStart()
