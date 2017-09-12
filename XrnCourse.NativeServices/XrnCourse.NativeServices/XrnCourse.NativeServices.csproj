@@ -47,6 +47,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IDeviceInfoService.cs" />
+    <Compile Include="Services\ISoundPlayer.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\DeviceInfoViewModel.cs" />
   </ItemGroup>

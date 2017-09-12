@@ -5,6 +5,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Button Text="Show Device Info" Command="{Binding OpenDeviceInfoPageCommand}"></Button>
+            <Button Text="Play Sound" Command="{Binding PlaySoundCommand}"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
